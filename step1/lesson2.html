@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>优化 DOM 操作</title>
+</head>
+
+<body>
+    <div class='wrapper'>
+        <!-- <button class='like-btn'>
+            <span class='like-text'>good</span>
+            <span>👍</span>
+        </button> -->
+    </div>
+    <script>
+        class likeButton {
+            render() {
+                return `
+                    <button class='like-btn'>
+                        <span class='like-text'>good good</span>
+                        <span>👍</span>
+                    </button>
+                `
+            }
+        }
+        function $(el) {
+            return document.querySelector(el)
+        }
+        var likeBtn1 = new likeButton()
+        $('.wrapper').innerHTML = likeBtn1.render()
+        var likeBtn2 = new likeButton()
+        $('.wrapper').innerHTML += likeBtn2.render()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>优化 DOM 操作</title>
+</head>
+
+<body>
+    <div class='wrapper'>
+        <button class='like-btn'>
+            <span class='like-text'>good</span>
+            <span>👍</span>
+        </button>
+    </div>
+    <script>
+    function $(el) {
+        return document.querySelector(el)
+    }
+    var flag = false
+    $('.like-btn').addEventListener('click', function() {
+        flag = !flag
+        if (flag) {
+            $('.like-text').innerHTML = 'bad'
+        } else {
+            $('.like-text').innerHTML = 'good'
+        }
+
+    })
+    </script>
+</body>
+
+</html>
